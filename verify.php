@@ -10,10 +10,18 @@
     <h1><center>Meaow Meaow</center> </h1>
     <hr>
     <div align="center">
-        เข้าสู่ระบบด้วย<br>
-        Login = <?php echo $_POST["login"];?> <br>
-        Password = <?php echo $_POST["Pwd"];?>
+        <?php
+            if($_POST['login'] == "admin" && $_POST['Pwd'] == "ad1234" ){
+                    echo"ยินดีต้อนรับคุณ ADMIN";
+            } elseif ($_POST['login'] == "member" && $_POST['Pwd'] == "mem1234" ){
+                    echo"ยินดีต้อนรับคุณ MEMBER";
+            } else{
+                echo"ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+            }
+        ?>
 
     </div>
+    <br>
+    <center><a href="index.php">กลับไปหน้าหลัก</center></a>
 </body>
 </html>
